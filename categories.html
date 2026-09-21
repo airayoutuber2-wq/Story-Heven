@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Category | StoryHeaven</title>
+  <title>Category | StoryHeaven</title>
 
-<meta name="description" content="Explore love, emotional, mystery, horror, fantasy and adventure stories on StoryHeaven.">
+  <meta name="description" content="Explore love, emotional, mystery, horror, fantasy and adventure stories on StoryHeaven.">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
   <div class="container nav">
+
     <a class="logo" href="index.html">StoryHeaven</a>
 
     <nav>
@@ -22,6 +24,7 @@
       <a href="index.html#stories">Stories</a>
       <a href="index.html#about">About</a>
     </nav>
+
   </div>
 </header>
 
@@ -89,4 +92,30 @@ if (!matches.length) {
 
   list.innerHTML = `
     <div class="story-card">
-      <h2>No stories yet</h2
+      <h2>No stories yet</h2>
+      <p>New stories for this category are coming soon.</p>
+    </div>
+  `;
+
+} else {
+
+  list.innerHTML = matches.map(s => `
+    <article class="story-card">
+
+      <p class="tag">${s.tag}</p>
+
+      <h2>${s.title}</h2>
+
+      <p>${s.desc}</p>
+
+      <a href="${s.url}">Read Story →</a>
+
+    </article>
+  `).join("");
+
+}
+
+</script>
+
+</body>
+</html>
