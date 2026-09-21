@@ -3,41 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Category | StoryHeaven</title>
-<meta name="description" content="Explore stories by category on StoryHeaven.">
+
+<meta name="description" content="Explore love, emotional, mystery, horror, fantasy and adventure stories on StoryHeaven.">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header><div class="container nav">
-<a class="logo" href="index.html">StoryHeaven</a>
-<nav><a href="index.html#categories">Categories</a><a href="index.html#stories">Stories</a><a href="index.html#about">About</a></nav>
-</div></header>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">StoryHeaven</a>
+
+    <nav>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#stories">Stories</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+
 <section class="section">
-<div class="container">
-<p class="eyebrow">STORY CATEGORY</p>
-<h1 id="categoryTitle">Stories</h1>
-<div id="storyList"></div>
-<a class="button" href="index.html">← Back to StoryHeaven</a>
-</div>
+
+  <div class="container">
+
+    <p class="eyebrow">STORY CATEGORY</p>
+
+    <h1 id="categoryTitle">Stories</h1>
+
+    <div id="storyList"></div>
+
+    <a class="button" href="index.html">
+      ← Back to StoryHeaven
+    </a>
+
+  </div>
+
 </section>
-<footer><p>© 2026 StoryHeaven</p></footer>
+
+
+<footer>
+  <p>© 2026 StoryHeaven</p>
+</footer>
+
+
 <script>
+
 const params = new URLSearchParams(location.search);
+
 const cat = params.get("cat") || "Stories";
+
 document.getElementById("categoryTitle").textContent = cat;
 
+
 const stories = [
- {cat:"Love", title:"A Letter I Never Sent", desc:"Some words stay in our hearts because we are afraid to say them.", url:"article-1.html", tag:"LOVE • ENGLISH • SHORT STORY"},
- {cat:"Short Stories", title:"A Letter I Never Sent", desc:"Some words stay in our hearts because we are afraid to say them.", url:"article-1.html", tag:"LOVE • ENGLISH • SHORT STORY"}
+
+  {
+    cat: "Love",
+    title: "When Hearts Misunderstand",
+    desc: "An original love story about two people, their misunderstandings, and the feelings they struggle to express.",
+    url: "when-hearts-misunderstand.html",
+    tag: "LOVE • EMOTIONAL STORY"
+  },
+
+  {
+    cat: "Emotional Stories",
+    title: "When Hearts Misunderstand",
+    desc: "An emotional story about love, misunderstanding, truth, and the feelings left unspoken.",
+    url: "when-hearts-misunderstand.html",
+    tag: "LOVE • EMOTIONAL STORY"
+  }
+
 ];
 
+
 const list = document.getElementById("storyList");
+
 const matches = stories.filter(s => s.cat === cat);
+
+
 if (!matches.length) {
- list.innerHTML = '<div class="story-card"><h2>No stories yet</h2><p>New stories for this category are coming soon.</p></div>';
-} else {
- list.innerHTML = matches.map(s => `<article class="story-card"><p class="tag">${s.tag}</p><h2>${s.title}</h2><p>${s.desc}</p><a href="${s.url}">Read Story →</a></article>`).join("");
-}
-</script>
-</body>
-</html>
+
+  list.innerHTML = `
+    <div class="story-card">
+      <h2>No stories yet</h2
